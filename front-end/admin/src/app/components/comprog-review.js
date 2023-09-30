@@ -32,8 +32,26 @@ const comprogReviewer = () => {
           <b className=" underline bg-yellow-400 px-3">Compiler</b> –translates
           a program written in a high-level language into a low-level language
         </li>
-        <li></li>
-        <li></li>
+        <li>
+          {" "}
+          <b className=" underline bg-yellow-400 px-3">Interpreter</b> –this
+          acts as a compiler, but it translates one (1) program statement at a
+          time, this executes the statement as soon as it is translated.
+        </li>
+        <li>
+          <b className=" underline bg-yellow-400 px-3">Syntax errors</b> – these
+          are errors that might be encountered during the process of
+          translation. An example is a misspelled command.
+        </li>
+        <li>
+          <b className=" underline bg-yellow-400 px-3">Logical errors </b> –
+          errors that occur when the syntax of the program is correct, but the
+          expected output is not
+        </li>
+        <li>
+          <b className=" underline bg-yellow-400 px-3">Debugging </b> – the
+          process of locating and correcting the errors of a program.
+        </li>
       </ul>
     </div>
   );
