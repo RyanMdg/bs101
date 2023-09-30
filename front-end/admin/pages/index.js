@@ -1,9 +1,10 @@
 import "../src/app/globals.css";
+import Navbar from "../src/app/components/navbar";
 
 const Home = () => {
   return (
     <main>
-      <h1 className=" bg-[#3B82F6] text-white p-6">Bs101</h1>
+      <Navbar />
     </main>
   );
 };
