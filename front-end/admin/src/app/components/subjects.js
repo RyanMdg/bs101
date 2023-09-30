@@ -1,18 +1,17 @@
 const Subject = ({ searchTerm }) => {
-  // Assuming 'subjects' is an array of subject objects with a 'name' property
   const subjects = [
     { id: "math2", name: "Math In Modern world" },
     { id: "nstp", name: "Nstp" },
-    // Add more subjects as needed
+    { id: "comprog", name: "Computer Programming" },
+    { id: "computing", name: "Introduction to Computing" },
   ];
 
-  // Filter subjects based on the search term
   const filteredSubjects = subjects.filter((subject) =>
     subject.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="mt-8 md:grid grid-cols-2 gap-4 mx-4">
+    <div className="mt-3 md:grid grid-cols-2 gap-4 mx-4">
       {filteredSubjects.map((subject) => (
         <a
           key={subject.id}
@@ -21,7 +20,7 @@ const Subject = ({ searchTerm }) => {
         >
           <img
             src={`/${subject.id}.png`}
-            className="rounded-md"
+            className="rounded-md mt-7"
             alt={subject.name}
           />
           <span className="mt-2">{subject.name}</span>
