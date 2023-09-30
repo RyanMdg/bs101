@@ -1,8 +1,16 @@
 import "../globals.css";
 import SearchIcon from "./searchicon";
 import Subject from "./subjects";
+import { useState } from "react";
 
 const hero = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  //  Handle search input change
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <section>
       <div className="bg-[#60A5FA]">
@@ -18,11 +26,13 @@ const hero = () => {
             placeholder="Search you want to review"
             name=""
             id=""
+            value={searchTerm}
+            onChange={handleSearchChange}
           />
           <SearchIcon />
         </div>
       </div>
-      <Subject />
+      <Subject searchTerm={searchTerm} />
     </section>
   );
 };
