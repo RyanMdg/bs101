@@ -1,12 +1,11 @@
 import Navbar from "../src/app/components/navbar";
-import mathFlashCard from "../src/app/components/math2-flashcard";
-
+import MathFlashCards from "../src/app/components/math2-flashcard";
 
 const math = () => {
   return (
     <div>
       <Navbar />
-      <mathFlashCard />
+      <MathFlashCards />
     </div>
   );
 };
