@@ -1,5 +1,6 @@
 import "../globals.css";
 import SearchIcon from "./searchicon";
+import Subject from "./subjects";
 
 const hero = () => {
   return (
@@ -21,6 +22,7 @@ const hero = () => {
           <SearchIcon />
         </div>
       </div>
+      <Subject />
     </section>
   );
 };
