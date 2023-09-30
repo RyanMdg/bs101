@@ -1,4 +1,5 @@
 import Navbar from "../src/app/components/navbar";
+import Comprog from "../src/app/components/comprog-review";
 
 const comprog = () => {
   return (
@@ -17,6 +18,7 @@ const comprog = () => {
           FlashCards
         </a>
       </div>
+      <Comprog />
     </div>
   );
 };
