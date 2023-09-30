@@ -1,16 +1,12 @@
 import Navbar from "../src/app/components/navbar";
+import mathFlashCard from "../src/app/components/math2-flashcard";
+
 
 const math = () => {
   return (
     <div>
       <Navbar />
-      <span className=" mt-10 flex justify-center">
-        {" "}
-        <h1 className=" font-bold"> Sorry Under Development</h1>
-        <h1 className=" font-bold"> Sorry Under Development</h1>
-        <h1 className=" font-bold"> Sorry Under Development</h1>
-
-      </span>
+      <mathFlashCard />
     </div>
   );
 };
