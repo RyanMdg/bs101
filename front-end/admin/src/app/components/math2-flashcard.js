@@ -3,7 +3,7 @@ const MathFlashCards = () => {
     return (
         <div className="container mx-auto">
 
-            <div className="flex min-h-fit mb-5 mt-10 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 mt-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:500px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
@@ -18,7 +18,7 @@ const MathFlashCards = () => {
                 </div>
             </div>
            
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:500px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
@@ -33,7 +33,7 @@ const MathFlashCards = () => {
                 </div>
             </div>
 
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:500px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
@@ -48,7 +48,7 @@ const MathFlashCards = () => {
                 </div>
             </div>
 
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:500px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
@@ -63,7 +63,7 @@ const MathFlashCards = () => {
                 </div>
             </div>
 
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:500px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
@@ -78,11 +78,11 @@ const MathFlashCards = () => {
                 </div>
             </div>
 
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:500px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
-                        <div className="text-center absolute inset-0 text-2xl font-medium">
-                            <p> We see that some plants exhibit this pattern, like the branches of a tree.You start with the main branch at the bottom. It splits off so that you have two, and it splits off again so that you have 3, and so forth.</p>
+                        <div className="text-center absolute inset-0 text-xl">
+                            <p className="px-5"> We see that some plants exhibit this pattern, like the branches of a tree. You start with the main branch at the bottom. It splits off so that you have two, and it splits off again so that you have 3, and so forth.</p>
                         </div>
                         <div className="absolute inset-0 h-full w-full rounded-xl px-12 [transform:rotateY(180deg)] transition-all [backface-visibility:hidden] group-active:bg-black group-active:[backface-visibility:visible]">
                             <div className="text-slate-100 text-center text-6xl font-extrabold">
@@ -93,7 +93,7 @@ const MathFlashCards = () => {
                 </div>
             </div>
 
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:1000px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
@@ -108,7 +108,7 @@ const MathFlashCards = () => {
                 </div>
             </div>
 
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:1000px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
@@ -123,7 +123,7 @@ const MathFlashCards = () => {
                 </div>
             </div>
 
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:1000px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
@@ -138,7 +138,7 @@ const MathFlashCards = () => {
                 </div>
             </div>
 
-            <div className="flex min-h-fit mb-5 flex-col justify-center select-none">
+            <div className="flex min-h-fit mb-10 flex-col justify-center select-none">
                 <div className="group h-60 w-100 [perspective:1000px]">
                     <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 text-2xl font-medium">
