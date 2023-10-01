@@ -27,10 +27,10 @@ const mathFlashCards = () => {
 
             <p className="text-2xl font-extrabold">Concise</p>
             <p className="mb-10 text-xl font-medium">able to say things briefly</p>
-            
-            <div className="flex min-h-screen flex-col justify-center">
+
+            <div className="flex min-h-screen flex-col justify-center select-none">
                 <div className="group h-96 w-100 [perspective:1000px]">
-                    <div className=" relative h-full w-full rounded-xl shadow-xl transition-all duration-200 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
+                    <div className=" relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
                         <div className="text-center absolute inset-0 mt-10 text-2xl font-medium">
                             <p>able to express complex thoughts with relative ease</p>
                         </div>
