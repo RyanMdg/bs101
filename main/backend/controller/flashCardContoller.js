@@ -1,5 +1,18 @@
 import subjectSchema from "../models/subjectSchema.js";
 
+// Answer and Question list
+const getFlashCard = (req, res) => {
+  subjectSchema
+    .find()
+    .sort({ createdAt: -1 })
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 // Post New FlashCard
 const flashcardAdd = async (req, res) => {
   try {
@@ -17,4 +30,5 @@ const flashcardAdd = async (req, res) => {
 
 export default {
   flashcardAdd,
+  getFlashCard,
 };
