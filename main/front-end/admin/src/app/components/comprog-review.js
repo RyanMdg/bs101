@@ -9,7 +9,7 @@ const ComprogReviewer = () => {
   useEffect(() => {
     // Make a GET request to your API endpoint
     axios
-      .get("http://localhost:4000/flashcard/getFlashCard")
+      .get("https://flashcardsbs101.onrender.com/flashcard/getFlashCard")
       .then((response) => {
         console.log("Response Data:", response.data); // Log the response data
         setFlashcardData(response.data);

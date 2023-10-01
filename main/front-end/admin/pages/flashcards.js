@@ -25,7 +25,7 @@ const Flashcard = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/flashcard/addFlashCard",
+        "https://flashcardsbs101.onrender.com/flashcard/addFlashCard",
         { answer, question }
       );
 
