@@ -87,7 +87,10 @@ const Flashcard = () => {
             <p className="text-green-500 font-semibold">
               Flashcard added successfully!
             </p>
-            <button onClick={closeSuccessModal} className="text-blue-500 mt-2">
+            <button
+              onClick={closeSuccessModal}
+              className="bg-[#3B82F6] rounded-md px-3 font-semibold text-white mt-2"
+            >
               Close
             </button>
           </div>
