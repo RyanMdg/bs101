@@ -7,4 +7,7 @@ const router = express.Router();
 
 router.post("/addFlashCard", flashCardController.flashcardAdd);
 
+// Get Answer and Questions
+router.get("/getFlashCard", flashCardController.getFlashCard);
+
 export default router;
