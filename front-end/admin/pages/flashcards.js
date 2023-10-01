@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "../src/app/components/navbar";
-import axios from "axios"; // Import Axios
+import axios from "axios";
 
 const Flashcard = () => {
   const [answer, setAnswer] = useState("");
   const [question, setQuestion] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
-  const [inputErrorMessage, setInputErrorMessage] = useState("");
 
   const handleAnswerChange = (e) => {
     setAnswer(e.target.value);
@@ -20,7 +19,7 @@ const Flashcard = () => {
     e.preventDefault();
 
     if (!answer || !question) {
-      setInputErrorMessage("Please fill in both fields.");
+      console.error("Answer and Question fields are required.");
       return;
     }
 
@@ -34,7 +33,6 @@ const Flashcard = () => {
         setIsSuccessModalOpen(true);
         setAnswer("");
         setQuestion("");
-        setInputErrorMessage(""); // Clear the error message
       } else {
         console.error("Failed to add flashcard");
       }
@@ -62,13 +60,8 @@ const Flashcard = () => {
             placeholder="Answer"
             value={answer}
             onChange={handleAnswerChange}
-            className={`border rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500 ${
-              inputErrorMessage && !answer ? "border-red-500" : ""
-            }`}
+            className="border  rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
           />
-          {inputErrorMessage && !answer && (
-            <p className="text-red-500 text-sm">Please fill this field.</p>
-          )}
         </div>
         <div className="mb-4">
           <textarea
@@ -79,13 +72,8 @@ const Flashcard = () => {
             id=""
             cols="30"
             rows="10"
-            className={`border rounded-sm placeholder:p-3 focus:outline-none focus:ring focus:border-blue-500 ${
-              inputErrorMessage && !question ? "border-red-500" : ""
-            }`}
+            className="border rounded-sm placeholder:p-3 focus:outline-none focus:ring focus:border-blue-500"
           ></textarea>
-          {inputErrorMessage && !question && (
-            <p className="text-red-500 text-sm">Please fill this field.</p>
-          )}
         </div>
         <div className="mb-4">
           <button
