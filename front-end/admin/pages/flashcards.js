@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "../src/app/components/navbar";
-import axios from "axios"; // Import Axios
+import axios from "axios";
 
 const Flashcard = () => {
   const [answer, setAnswer] = useState("");
   const [question, setQuestion] = useState("");
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   const handleAnswerChange = (e) => {
     setAnswer(e.target.value);
@@ -24,13 +25,19 @@ const Flashcard = () => {
       );
 
       if (response.status === 200) {
-        console.log("Flashcard added successfully");
+        setIsSuccessModalOpen(true);
+        setAnswer("");
+        setQuestion("");
       } else {
         console.error("Failed to add flashcard");
       }
     } catch (error) {
       console.error("Error:", error);
     }
+  };
+
+  const closeSuccessModal = () => {
+    setIsSuccessModalOpen(false);
   };
 
   return (
@@ -72,6 +79,20 @@ const Flashcard = () => {
           </button>
         </div>
       </form>
+
+      {/* Success Modal */}
+      {isSuccessModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-700 bg-opacity-50 z-50">
+          <div className="bg-white p-4 rounded-md">
+            <p className="text-green-500 font-semibold">
+              Flashcard added successfully!
+            </p>
+            <button onClick={closeSuccessModal} className="text-blue-500 mt-2">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
