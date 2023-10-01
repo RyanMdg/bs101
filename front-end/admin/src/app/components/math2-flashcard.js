@@ -2,7 +2,7 @@ const mathFlashCards = () => {
     return (
         <div className="container mx-auto mt-5">
             <p class="text-2xl font-extrabold">Pattern</p>
-            <p class="text-xl font-medium">A sequences or designs that are orderly and that repeat</p>
+            <p class="mb-10 text-xl font-medium">A sequences or designs that are orderly and that repeat</p>
            
             <p className="text-2xl font-extrabold">Symmetry</p>
             <p className="mb-10 text-xl font-medium">When different sides of something are alike. These reflections may be mirror images with only two sides like the two sides of our bodies</p>
