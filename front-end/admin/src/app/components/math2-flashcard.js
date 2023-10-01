@@ -27,9 +27,21 @@ const mathFlashCards = () => {
 
             <p className="text-2xl font-extrabold">Concise</p>
             <p className="mb-10 text-xl font-medium">able to say things briefly</p>
-
-            <p className="text-2xl font-extrabold">Powerful</p>
-            <p className="mb-10 text-xl font-medium">able to express complex thoughts with relative ease</p>
+            
+            <div className="flex min-h-screen flex-col justify-center">
+                <div className="group h-96 w-100 [perspective:1000px]">
+                    <div className=" relative h-full w-full rounded-xl shadow-xl transition-all duration-200 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
+                        <div className="text-center absolute inset-0 mt-10 text-2xl font-medium">
+                            <p>able to express complex thoughts with relative ease</p>
+                        </div>
+                    <div className="absolute inset-0 h-full w-full rounded-xl px-12 [transform:rotateY(180deg)] transition-all [backface-visibility:hidden] group-active:bg-black group-active:[backface-visibility:visible]">
+                        <div className="text-slate-100 text-center text-6xl font-extrabold">
+                            <p className=" mt-20">Powerful</p>
+                        </div>    
+                    </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     );
