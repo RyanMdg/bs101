@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Flashcard = () => {
   const [answer, setAnswer] = useState("");
-  const [subject, setSubject] = useState("");
+  const [subjects, setSubject] = useState("");
   const [question, setQuestion] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
@@ -23,7 +23,7 @@ const Flashcard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!answer || !question || !subject) {
+    if (!answer || !question || !subjects) {
       console.error("Answer and Question fields are required.");
       return;
     }
@@ -31,7 +31,7 @@ const Flashcard = () => {
     try {
       const response = await axios.post(
         "https://flashcardsbs101.onrender.com/flashcard/addFlashCard",
-        { answer, question, subject }
+        { answer, question, subjects }
       );
 
       if (response.status === 200) {
@@ -63,7 +63,7 @@ const Flashcard = () => {
             type="text"
             name="subject"
             placeholder="Subject"
-            value={subject}
+            value={subjects}
             onChange={handleSubjectChange}
             className="border  rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
           />
