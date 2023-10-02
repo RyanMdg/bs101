@@ -30,7 +30,7 @@ const ComprogReviewer = () => {
     <div>
       <h2 className="text-center mt-3">Midterms</h2>
       <br />
-      <div className="mx-5 mt-5 bg-[#FFF7F0] pb-7 shadow-2xl rounded-lg pt-5 px-3">
+      <div className="mx-7 pb-7 mt-5 bg-[#FFF7F0]  shadow-2xl rounded-lg pt-5 px-3">
         <h1 className="uppercase font-extrabold">Handouts 1</h1>
         <ul className="list-inside list-disc">
           <li className="font-semibold underline">Data types</li>
@@ -39,13 +39,13 @@ const ComprogReviewer = () => {
         </ul>
         <div className="relative mt-5">
           <button
-            className="absolute top-1/2 text-[2rem] transform -translate-y-1/2 right-2 text-black hover:text-gray-800"
+            className="absolute top-1/2 text-[3rem] transform -translate-y-1/2 right-2 text-black hover:text-gray-800"
             onClick={nextFlashcard}
           >
             &#8250;
           </button>
           <div
-            className={`w-full h-40 p-4 bg-[#3B82F6] flex items-center justify-center rounded-lg shadow-md cursor-pointer`}
+            className={`w-full px-[2rem] h-40 p-4 bg-[#3B82F6] flex items-center justify-center rounded-lg shadow-md cursor-pointer`}
             onClick={flipCard}
           >
             <p className="text-[1rem] text-white font-semibold">
