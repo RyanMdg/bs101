@@ -83,25 +83,4 @@ const MathFlashCards = () => {
   );
 };
 
-const flashcard = (questionParagraph, answerParagraph) => {
-
-  return (
-    <div className="flex min-h-fit mb-20 flex-col justify-center select-none">
-    <div className="group h-60 w-100 [perspective:1000px]">
-        <div className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
-            <div className="text-center absolute inset-0 text-2xl font-medium">
-                <p className = "mt-20 px-5">{questionParagraph}</p>
-            </div>
-            <div className="absolute inset-0 h-full w-full rounded-xl px-12 [transform:rotateY(180deg)] transition-all [backface-visibility:hidden] group-active:bg-blue-400 group-active:[backface-visibility:visible]">
-                <div className="text-slate-100 text-center text-6xl font-extrabold">
-                    <p className=" mt-20">{answerParagraph}</p>
-                  </div>    
-              </div>
-          </div>
-      </div>
-  </div>
-  )
-}
-
-
 export default MathFlashCards;
