@@ -38,6 +38,7 @@ const Flashcard = () => {
         setIsSuccessModalOpen(true);
         setAnswer("");
         setQuestion("");
+        setSubject("");
       } else {
         console.error("Failed to add flashcard");
       }
@@ -61,7 +62,7 @@ const Flashcard = () => {
         <div className="mb-4">
           <input
             type="text"
-            name="subject"
+            name="subjects"
             placeholder="Subject"
             value={subjects}
             onChange={handleSubjectChange}

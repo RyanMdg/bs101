@@ -1,49 +1,70 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 const ComprogReviewer = () => {
-  // State variables to store the fetched data
-  const [flashcardData, setFlashcardData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [flashcards, setFlashcards] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {
-    // Make a GET request to your API endpoint
+    // Fetch flashcards data from your API for the "computer programming" category.
     axios
       .get("https://flashcardsbs101.onrender.com/flashcard/getFlashCard")
       .then((response) => {
-        console.log("Response Data:", response.data); // Log the response data
-        setFlashcardData(response.data);
-        setIsLoading(false);
+        setFlashcards(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
-        setIsLoading(false);
+        console.error("Error fetching flashcards:", error);
       });
   }, []);
 
+  const nextFlashcard = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % flashcards.length);
+    setShowAnswer(false);
+  };
+
+  const flipCard = () => {
+    setShowAnswer(!showAnswer);
+  };
+
   return (
-    <div className="mx-2 mt-5">
-      <h1 className="uppercase bg-yellow-500 text-center mt-10 py-2 mb-3 font-extrabold underline">
-        Reviewers
-      </h1>
-      <h1 className="uppercase">Prelims handouts</h1>
-      <u className="list-inside list-disc">
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <>
-            <a
-              href={flashcardData.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <li className="font-semibold">{flashcardData.title}</li>
-            </a>
-            <h1>Answer: {flashcardData.answer}</h1>
-            <p>Question: {flashcardData.question}</p>
-          </>
-        )}
-      </u>
+    <div>
+      <h2 className="text-center mt-3">Midterms</h2>
+      <br />
+      <div className="mx-5 mt-5 bg-[#FFF7F0] pb-7 shadow-2xl rounded-lg pt-5 px-3">
+        <h1 className="uppercase font-extrabold">Handouts 1</h1>
+        <ul className="list-inside list-disc">
+          <li className=" font-semibold underline">Data types</li>
+          <li>Topic 2</li>
+          <li>Topic 3</li>
+        </ul>
+        <div className="relative mt-5  ">
+          <button
+            className="absolute top-1/2 text-[2rem] transform -translate-y-1/2 right-2 text-black hover:text-gray-800"
+            onClick={nextFlashcard}
+          >
+            &#8250;
+          </button>
+          <motion.div
+            key={flashcards[currentIndex]?._id}
+            initial={{ opacity: 0, rotateY: -180 }}
+            animate={{ opacity: 1, rotateY: 0 }}
+            exit={{ opacity: 0, rotateY: 180 }}
+            transition={{ duration: 0.5 }}
+            className={`w-full h-40 p-4 bg-[#3B82F6] flex items-center justify-center  rounded-lg shadow-md cursor-pointer ${
+              showAnswer ? "rotate-y-180" : ""
+            }`}
+            onClick={flipCard}
+          >
+            <p className="text-[1rem]  text-white font-semibold">
+              {showAnswer
+                ? flashcards[currentIndex]?.answer
+                : flashcards[currentIndex]?.question}
+            </p>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 };
