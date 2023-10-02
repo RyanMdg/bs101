@@ -11,6 +11,10 @@ const subjectSchema = new Schema(
       type: String,
       require: true,
     },
+    subjects: {
+      type: String,
+      require: true,
+    },
   },
   { timestamps: true }
 );

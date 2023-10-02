@@ -32,6 +32,14 @@ const hero = () => {
           <SearchIcon />
         </div>
       </div>
+
+      <a
+        className=" flex justify-center items-center h-14 border-2 rounded-md shadow-2xl text-[#60A5FA] uppercase font-semibold mx-4 mt-5 border-[#60A5FA]"
+        href="/flashcards"
+      >
+        add flashcard
+      </a>
+
       <Subject searchTerm={searchTerm} />
     </section>
   );

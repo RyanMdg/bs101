@@ -4,11 +4,16 @@ import axios from "axios";
 
 const Flashcard = () => {
   const [answer, setAnswer] = useState("");
+  const [subject, setSubject] = useState("");
   const [question, setQuestion] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   const handleAnswerChange = (e) => {
     setAnswer(e.target.value);
+  };
+
+  const handleSubjectChange = (e) => {
+    setSubject(e.target.value);
   };
 
   const handleQuestionChange = (e) => {
@@ -18,7 +23,7 @@ const Flashcard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!answer || !question) {
+    if (!answer || !question || !subject) {
       console.error("Answer and Question fields are required.");
       return;
     }
@@ -26,7 +31,7 @@ const Flashcard = () => {
     try {
       const response = await axios.post(
         "https://flashcardsbs101.onrender.com/flashcard/addFlashCard",
-        { answer, question }
+        { answer, question, subject }
       );
 
       if (response.status === 200) {
@@ -53,6 +58,17 @@ const Flashcard = () => {
         onSubmit={handleSubmit}
         className="border rounded-lg border-[#6666] mx-5 flex flex-col items-center gap-2 pt-2 shadow-lg"
       >
+        <div className="mb-4">
+          <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            value={subject}
+            onChange={handleSubjectChange}
+            className="border  rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
+          />
+        </div>
+
         <div className="mb-4">
           <input
             type="text"
