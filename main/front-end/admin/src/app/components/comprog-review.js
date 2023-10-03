@@ -65,11 +65,13 @@ const ComprogReviewer = () => {
       <h2 className="text-center mt-4 uppercase font-extrabold">Midterms</h2>
       <br />
       <div className="mx-7 pb-7 mt-5 bg-[#FFF7F0]  shadow-2xl rounded-lg pt-5 px-3">
-        <h1 className="uppercase font-extrabold">Handouts 1</h1>
+        <h1 className="uppercase font-extrabold">Handout 1</h1>
         <ul className="list-inside list-disc">
           <li className="font-semibold underline">
             {" "}
-            <a href="">Handout Link</a>
+            <a href="https://drive.google.com/file/d/15A0klpdQ3hsXGXUz0FyKRFngmYM7a4T6/view?usp=sharing">
+              Handout Link
+            </a>
           </li>
         </ul>
         <div className="relative mt-5">
@@ -93,10 +95,12 @@ const ComprogReviewer = () => {
       </div>
 
       <div className="mx-7 pb-7 mt-5 bg-[#FFF7F0]  shadow-2xl rounded-lg pt-5 px-3">
-        <h1 className="uppercase font-extrabold">Handouts 2</h1>
+        <h1 className="uppercase font-extrabold">Handout 2</h1>
         <ul className="list-inside list-disc">
           <li className="font-semibold underline">
-            <a href="">Handout Link</a>
+            <a href="https://drive.google.com/file/d/1L2EyrP_ib9y91SQj11pZmQejWtjUfSZv/view?usp=sharing">
+              Handout Link
+            </a>
           </li>
         </ul>
         <div className="relative mt-5">
