@@ -2,9 +2,17 @@ import React, { useState } from "react";
 import Navbar from "../src/app/components/navbar";
 import axios from "axios";
 
+const subjectsOptions = [
+  "Math",
+  "Computer Programming",
+  "NSTP",
+  "Intro to Computing",
+  "Design",
+];
+
 const Flashcard = () => {
   const [answer, setAnswer] = useState("");
-  const [subjects, setSubject] = useState("");
+  const [subjects, setSubject] = useState(""); // Changed state name to 'subject' for clarity
   const [question, setQuestion] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
@@ -24,14 +32,14 @@ const Flashcard = () => {
     e.preventDefault();
 
     if (!answer || !question || !subjects) {
-      console.error("Answer and Question fields are required.");
+      console.error("Answer, Question, and Subject fields are required.");
       return;
     }
 
     try {
       const response = await axios.post(
         "https://flashcardsbs101.onrender.com/flashcard/addFlashCard",
-        { answer, question, subjects }
+        { answer, question, subjects } // Changed state name to 'subject' for consistency
       );
 
       if (response.status === 200) {
@@ -60,14 +68,19 @@ const Flashcard = () => {
         className="border rounded-lg border-[#6666] mx-5 flex flex-col items-center gap-2 pt-2 shadow-lg"
       >
         <div className="mb-4">
-          <input
-            type="text"
-            name="subjects"
-            placeholder="Subject"
+          <select
+            name="subject"
             value={subjects}
             onChange={handleSubjectChange}
-            className="border  rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
-          />
+            className="border rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
+          >
+            <option value="">Select a Subject</option>
+            {subjectsOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="mb-4">
@@ -77,7 +90,7 @@ const Flashcard = () => {
             placeholder="Answer"
             value={answer}
             onChange={handleAnswerChange}
-            className="border  rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
+            className="border rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
           />
         </div>
         <div className="mb-4">

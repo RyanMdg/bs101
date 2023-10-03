@@ -10,7 +10,11 @@ const ComprogReviewer = () => {
     axios
       .get("https://flashcardsbs101.onrender.com/flashcard/getFlashCard")
       .then((response) => {
-        setFlashcards(response.data);
+        // Filtering comprog sub
+        const computerProgrammingFlashcards = response.data.filter(
+          (flashcard) => flashcard.subjects === "Computer Programming"
+        );
+        setFlashcards(computerProgrammingFlashcards);
       })
       .catch((error) => {
         console.error("Error fetching flashcards:", error);
