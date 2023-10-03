@@ -16,12 +16,13 @@ const getFlashCard = (req, res) => {
 // Post New FlashCard
 const flashcardAdd = async (req, res) => {
   try {
-    const { answer, question, subjects } = req.body;
+    const { answer, question, subjects, handouts } = req.body;
 
     const subject = await subjectSchema.create({
       answer,
       question,
       subjects,
+      handouts,
     });
     res.status(200).json(subject);
   } catch (error) {

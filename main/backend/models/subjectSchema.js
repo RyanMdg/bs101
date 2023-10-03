@@ -15,6 +15,10 @@ const subjectSchema = new Schema(
       type: String,
       require: true,
     },
+    handouts: {
+      type: Number,
+      require: true,
+    },
   },
   { timestamps: true }
 );

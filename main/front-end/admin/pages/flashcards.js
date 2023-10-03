@@ -7,17 +7,23 @@ const subjectsOptions = [
   "Computer Programming",
   "NSTP",
   "Intro to Computing",
-  "Design",
 ];
+
+const handoutsOptions = [1, 2, 3, 4, 5];
 
 const Flashcard = () => {
   const [answer, setAnswer] = useState("");
-  const [subjects, setSubject] = useState(""); // Changed state name to 'subject' for clarity
+  const [subjects, setSubject] = useState("");
+  const [handouts, setHandoOuts] = useState("");
   const [question, setQuestion] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   const handleAnswerChange = (e) => {
     setAnswer(e.target.value);
+  };
+
+  const handleHandoutsChange = (e) => {
+    setHandoOuts(e.target.value);
   };
 
   const handleSubjectChange = (e) => {
@@ -31,15 +37,17 @@ const Flashcard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!answer || !question || !subjects) {
-      console.error("Answer, Question, and Subject fields are required.");
+    if (!answer || !question || !subjects || !handouts) {
+      console.error(
+        "Answer, Question, and Subject and handouts fields are required."
+      );
       return;
     }
 
     try {
       const response = await axios.post(
         "https://flashcardsbs101.onrender.com/flashcard/addFlashCard",
-        { answer, question, subjects } // Changed state name to 'subject' for consistency
+        { answer, question, subjects, handouts } // Changed state name to 'subject' for consistency
       );
 
       if (response.status === 200) {
@@ -47,6 +55,7 @@ const Flashcard = () => {
         setAnswer("");
         setQuestion("");
         setSubject("");
+        setHandoOuts("");
       } else {
         console.error("Failed to add flashcard");
       }
@@ -78,6 +87,22 @@ const Flashcard = () => {
             {subjectsOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="mb-4">
+          <select
+            name="subject"
+            value={handouts}
+            onChange={handleHandoutsChange}
+            className="border rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
+          >
+            <option value="">Select a Handouts</option>
+            {handoutsOptions.map((option) => (
+              <option key={option} value={option}>
+                Handout {option}
               </option>
             ))}
           </select>

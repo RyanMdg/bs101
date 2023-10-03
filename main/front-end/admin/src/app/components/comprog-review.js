@@ -32,7 +32,7 @@ const ComprogReviewer = () => {
 
   return (
     <div>
-      <h2 className="text-center mt-3">Midterms</h2>
+      <h2 className="text-center mt-4 uppercase font-extrabold">Midterms</h2>
       <br />
       <div className="mx-7 pb-7 mt-5 bg-[#FFF7F0]  shadow-2xl rounded-lg pt-5 px-3">
         <h1 className="uppercase font-extrabold">Handouts 1</h1>
