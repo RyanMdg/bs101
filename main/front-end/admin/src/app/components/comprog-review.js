@@ -80,12 +80,6 @@ const ComprogReviewer = () => {
           </li>
         </ul>
         <div className="relative mt-5">
-          <button
-            className="absolute top-1/2 text-[3rem] transform -translate-y-1/2 right-2 text-black hover:text-gray-800"
-            onClick={nextFlashcard}
-          >
-            &#8250;
-          </button>
           <div
             className={`w-full h-auto max-h-40 p-4 bg-[#3B82F6] inner-shadow flex items-center justify-center rounded-lg shadow-md cursor-pointer`}
             onClick={flipCard}
@@ -97,9 +91,17 @@ const ComprogReviewer = () => {
             </p>
           </div>
         </div>
+        <div className=" flex justify-center mt-2  ">
+          <button
+            className=" text-center bg-[#566AB3] px-3 rounded-md   text-white font-semibold "
+            onClick={nextFlashcard}
+          >
+            Next
+          </button>
+        </div>
       </div>
 
-      <div className="mx-7 pb-7 mt-5 bg-[#f7eee6]  shadow-2xl rounded-lg pt-5 px-3">
+      <div className="mx-7 pb-3 mt-5 bg-[#f7eee6] mb-5  shadow-2xl rounded-lg pt-5 px-3">
         <h1 className="uppercase font-extrabold">Handout 2</h1>
         <ul className="list-inside list-disc">
           <li className="font-semibold underline">
@@ -109,13 +111,6 @@ const ComprogReviewer = () => {
           </li>
         </ul>
         <div className="relative mt-5">
-          <button
-            className="absolute top-1/2 text-[3rem] transform -translate-y-1/2 right-2 text-black hover:text-gray-800"
-            onClick={nextFlashcard2}
-          >
-            &#8250;
-          </button>
-
           <div
             className={`w-full h-auto max-h-40 p-4 bg-[#3B82F6] inner-shadow flex items-center justify-center rounded-lg shadow-md cursor-pointer`}
             onClick={flipCard1}
@@ -126,6 +121,14 @@ const ComprogReviewer = () => {
                 : handouts[currentIndex1]?.question}
             </p>
           </div>
+        </div>
+        <div className=" flex justify-center mt-2  ">
+          <button
+            className=" text-center bg-[#566AB3] px-3 rounded-md   text-white font-semibold "
+            onClick={nextFlashcard2}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
