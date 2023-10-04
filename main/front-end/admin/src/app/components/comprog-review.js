@@ -69,7 +69,7 @@ const ComprogReviewer = () => {
     <div>
       <h2 className="text-center mt-4 uppercase font-extrabold">Midterms</h2>
       <br />
-      <div className="mx-7 pb-7 mt-5 bg-[#f7eee6]  shadow-2xl rounded-lg pt-5 px-3">
+      <div className="mx-7 pb-7 border border-black mt-5 bg-[#f7eee6]  shadow-2xl rounded-lg pt-5 px-3">
         <h1 className="uppercase font-extrabold">Handout 1</h1>
         <ul className="list-inside list-disc">
           <li className="font-semibold underline">
@@ -101,7 +101,8 @@ const ComprogReviewer = () => {
         </div>
       </div>
 
-      <div className="mx-7 pb-3 mt-5 bg-[#f7eee6] mb-5  shadow-2xl rounded-lg pt-5 px-3">
+      {/* HANDOUT 2 */}
+      <div className="mx-7 pb-3 border border-black mt-5 bg-[#f7eee6] mb-5  shadow-2xl rounded-lg pt-5 px-3">
         <h1 className="uppercase font-extrabold">Handout 2</h1>
         <ul className="list-inside list-disc">
           <li className="font-semibold underline">
