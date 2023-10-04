@@ -19,3 +19,8 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+
+/* Add this to your CSS or SCSS stylesheet */
+.inner-shadow {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 2);
+}
