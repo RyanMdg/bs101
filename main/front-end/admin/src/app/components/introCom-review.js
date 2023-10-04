@@ -26,14 +26,14 @@ const ComprogReviewer = () => {
         // Filtering comprog sub
         const computerProgrammingFlashcards = response.data.filter(
           (flashcard) =>
-            flashcard.subjects === "Introduction to Computing" &&
+            flashcard.subjects === "Intro to Computing" &&
             flashcard.handouts === 1
         );
 
         const computerProgrammingHandouts = response.data.filter(
           (handouts) =>
             handouts.handouts === 2 &&
-            handouts.subjects === "Introduction to Computing"
+            handouts.subjects === "Intro to Computing"
         );
 
         // random fetch
