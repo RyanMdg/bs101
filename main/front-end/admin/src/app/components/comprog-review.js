@@ -86,7 +86,7 @@ const ComprogReviewer = () => {
           >
             <p className="text-[1rem] px-1 overflow-auto text-white font-semibold">
               {showAnswer
-                ? flashcards[currentIndex]?.answer
+                ? `Answer : ${flashcards[currentIndex]?.answer}`
                 : flashcards[currentIndex]?.question}
             </p>
           </div>
