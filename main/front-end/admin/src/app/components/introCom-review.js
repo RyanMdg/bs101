@@ -26,14 +26,14 @@ const ComprogReviewer = () => {
         // Filtering comprog sub
         const computerProgrammingFlashcards = response.data.filter(
           (flashcard) =>
-            flashcard.subjects === "Computer Programming" &&
+            flashcard.subjects === "Introduction to Computing" &&
             flashcard.handouts === 1
         );
 
         const computerProgrammingHandouts = response.data.filter(
           (handouts) =>
             handouts.handouts === 2 &&
-            handouts.subjects === "Computer Programming"
+            handouts.subjects === "Introduction to Computing"
         );
 
         // random fetch
@@ -75,7 +75,7 @@ const ComprogReviewer = () => {
           <ul className="list-inside list-disc">
             <li className="font-semibold underline">
               {" "}
-              <a href="https://drive.google.com/file/d/15A0klpdQ3hsXGXUz0FyKRFngmYM7a4T6/view?usp=sharing">
+              <a href="https://drive.google.com/file/d/1OzMClNEo6HiXcifPuWcRxf6Xj2wrgXoc/view?usp=sharing">
                 Handout Link
               </a>
             </li>
@@ -107,7 +107,7 @@ const ComprogReviewer = () => {
           <h1 className="uppercase font-extrabold">Handout 2</h1>
           <ul className="list-inside list-disc">
             <li className="font-semibold underline">
-              <a href="https://drive.google.com/file/d/1L2EyrP_ib9y91SQj11pZmQejWtjUfSZv/view?usp=sharing">
+              <a href="https://drive.google.com/file/d/1_LnO2MQQftn_XBUQVD6ETvh_RjVDAUlv/view?usp=sharing">
                 Handout Link
               </a>
             </li>
