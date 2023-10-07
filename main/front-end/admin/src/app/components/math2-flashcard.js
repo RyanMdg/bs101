@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import "../math.css";
+
 
 import axios from "axios";
 
@@ -35,15 +37,48 @@ const MathFlashCards = () => {
     }, []);
 
   const Flashcard = () => {
-    return (  
-      <div className="flex flex-row min-h-fit mt-10 justify-center select-none">
+    const [effect, setEffect] = useState(false);
+    const [effect1, setEffect1] = useState(false);
+    let clickCounter = 0;
+    return (
+      <div className="flex flex-row mt-10 justify-center select-none">
         {mathFlashcard.map((flashcard) => (
           <div className="mb-10 group h-60 w-40 [perspective:500px]">
-            <div className="bg-slate-100 h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
+            <div
+              className={`${
+                effect && "[transform:rotateY(180deg)]"
+              } transition-all duration-500 [transform-style:preserve-3d] bg-slate-100 h-full w-full rounded-xl shadow-xl`}
+              onClick={() => {
+                if (clickCounter === 0) {
+                  setEffect(true);
+                  console.log("gaegea")
+                  clickCounter = 1;
+                } else {
+                  console.log("sdgsdgfsd");
+                  clickCounter = 0;
+                }
+              }}
+              onAnimationEnd={() => {
+                setEffect(false);
+              }}
+            >
               <div className="text-center absolute inset-0 text-10vw font-medium">
                 <p className="mt-10 px-5">{flashcard.question}</p>
               </div>
-              <div className="absolute inset-0 h-full w-full rounded-xl px-12 [transform:rotateY(180deg)] transition-all [backface-visibility:hidden] group-active:bg-blue-400 group-active:[backface-visibility:visible]">
+              <div
+                className={`${
+                  effect &&
+                  "bg-blue-400 [backface-visibility:visible] [transform:rotateY(180deg)]"
+                } ${
+                  effect1 && "[transform:rotateY(180deg)]"
+                } " transition-all [backface-visibility:hidden] absolute inset-0 h-full w-full rounded-xl px-12`} 
+                onClick={() =>{
+                  setEffect(false);
+                  setEffect1(true);}} 
+                onAnimationEnd={() => {
+                  setEffect1(false);
+                }}
+              >
                 <div className="text-slate-100 text-center text-10vw font-extrabold">
                   <p className="mt-20">{flashcard.answer}</p>
                 </div>
