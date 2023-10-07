@@ -51,10 +51,8 @@ const MathFlashCards = () => {
               onClick={() => {
                 if (clickCounter === 0) {
                   setEffect(true);
-                  console.log("gaegea")
                   clickCounter = 1;
                 } else {
-                  console.log("sdgsdgfsd");
                   clickCounter = 0;
                 }
               }}
