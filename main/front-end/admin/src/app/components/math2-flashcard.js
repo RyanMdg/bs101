@@ -28,7 +28,6 @@ const MathFlashCards = () => {
             // random fetch
             const shuffledFlashcards = shuffleArray(mathcards);
             setFlashcards(shuffledFlashcards);
-            console.log(mathFlashcard);
         })
         .catch((error) => {
             console.error("Error fetching flashcards:", error);
@@ -37,15 +36,15 @@ const MathFlashCards = () => {
 
   const Flashcard = () => {
     return (  
-      <div className="flex min-h-fit mt-10 flex-col justify-center select-none">
+      <div className="flex flex-row min-h-fit mt-10 justify-center select-none">
         {mathFlashcard.map((flashcard) => (
-          <div className="mb-10 group h-60 w-100 [perspective:500px]">
-            <div class = "card" className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
-              <div className="text-center absolute inset-0 text-2xl font-medium">
+          <div className="mb-10 group h-60 w-40 [perspective:500px]">
+            <div className="bg-slate-100 h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
+              <div className="text-center absolute inset-0 text-10vw font-medium">
                 <p className="mt-10 px-5">{flashcard.question}</p>
               </div>
               <div className="absolute inset-0 h-full w-full rounded-xl px-12 [transform:rotateY(180deg)] transition-all [backface-visibility:hidden] group-active:bg-blue-400 group-active:[backface-visibility:visible]">
-                <div className="text-slate-100 text-center text-6xl font-extrabold">
+                <div className="text-slate-100 text-center text-10vw font-extrabold">
                   <p className="mt-20">{flashcard.answer}</p>
                 </div>
               </div>
