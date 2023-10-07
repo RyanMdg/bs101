@@ -13,6 +13,7 @@ function shuffleArray(array) {
 
 const MathFlashCards = () => {
     const [mathFlashcard, setFlashcards] = useState([]);
+    let clickCounter = 0;
 
     useEffect(() => {
         axios
@@ -35,9 +36,8 @@ const MathFlashCards = () => {
     }, []);
 
   const Flashcard = () => {
-    const [effect, setEffect] = useState(false);
-    const [effect1, setEffect1] = useState(false);
-    let clickCounter = 0;
+    const [effect, flipToAnswer] = useState(false);
+    const [effect1, flipToQuestion] = useState(false);
     return (
       <div className="flex flex-row mt-10 justify-center select-none">
         {mathFlashcard.map((flashcard) => (
@@ -48,14 +48,15 @@ const MathFlashCards = () => {
               } transition-all duration-500 [transform-style:preserve-3d] bg-slate-100 h-full w-full rounded-xl shadow-xl`}
               onClick={() => {
                 if (clickCounter === 0) {
-                  setEffect(true);
+                  flipToAnswer(true);
                   clickCounter = 1;
                 } else {
+                  flipToQuestion(true);
                   clickCounter = 0;
                 }
               }}
               onAnimationEnd={() => {
-                setEffect(false);
+                flipToAnswer(false);
               }}
             >
               <div className="text-center absolute inset-0 text-10vw font-medium">
@@ -69,10 +70,10 @@ const MathFlashCards = () => {
                   effect1 && "[transform:rotateY(180deg)]"
                 } " transition-all [backface-visibility:hidden] absolute inset-0 h-full w-full rounded-xl px-12`} 
                 onClick={() =>{
-                  setEffect(false);
-                  setEffect1(true);}} 
+                  flipToAnswer(false);
+                  }} 
                 onAnimationEnd={() => {
-                  setEffect1(false);
+                  flipToQuestion(false);
                 }}
               >
                 <div className="text-slate-100 text-center text-10vw font-extrabold">
