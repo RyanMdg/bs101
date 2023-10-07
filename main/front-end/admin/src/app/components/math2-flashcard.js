@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../math.css";
-
 
 import axios from "axios";
 
