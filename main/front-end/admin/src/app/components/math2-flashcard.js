@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
@@ -11,45 +11,42 @@ function shuffleArray(array) {
   return shuffledArray;
 }
 
-
-
 const MathFlashCards = () => {
+    const [mathFlashcard, setFlashcards] = useState([]);
 
     useEffect(() => {
         axios
         .get("https://flashcardsbs101.onrender.com/flashcard/getFlashCard")
         .then((response) => {
             // Filtering math
-            const mathFlashcards = response.data.filter(
+            const mathcards = response.data.filter(
             (flashcard) =>
                 flashcard.subjects === "Math" &&
                 flashcard.handouts === 1
             );
-            
+            console.log(mathcards);
             // random fetch
-            const shuffledFlashcards = shuffleArray(mathFlashcards);
-            mathFlashcard.push(shuffledFlashcards);
-            
+            const shuffledFlashcards = shuffleArray(mathcards);
+            setFlashcards(shuffledFlashcards);
+            console.log(mathFlashcard);
         })
         .catch((error) => {
             console.error("Error fetching flashcards:", error);
         });
     }, []);
-  const mathFlashcard = [];
 
   const Flashcard = () => {
-            console.log(mathFlashcard);
     return (  
       <div className="flex min-h-fit mt-10 flex-col justify-center select-none">
         {mathFlashcard.map((flashcard) => (
           <div className="mb-10 group h-60 w-100 [perspective:500px]">
             <div class = "card" className="bg-slate-100 relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d group-active:[transform:rotateY(180deg)] ">
               <div className="text-center absolute inset-0 text-2xl font-medium">
-                <p className="mt-10 px-5">{flashcard[0][0].question}</p>
+                <p className="mt-10 px-5">{flashcard.question}</p>
               </div>
               <div className="absolute inset-0 h-full w-full rounded-xl px-12 [transform:rotateY(180deg)] transition-all [backface-visibility:hidden] group-active:bg-blue-400 group-active:[backface-visibility:visible]">
                 <div className="text-slate-100 text-center text-6xl font-extrabold">
-                  <p className="mt-20">{flashcard[0][0].answer}</p>
+                  <p className="mt-20">{flashcard.answer}</p>
                 </div>
               </div>
             </div>
