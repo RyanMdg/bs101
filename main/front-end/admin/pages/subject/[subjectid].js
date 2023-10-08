@@ -1,6 +1,7 @@
 import Navbar from "../../src/app/components/navbar";
 import Comprog from "../../src/app/components/comprog-review";
 import IntroCom from "../../src/app/components/introCom-review";
+import Nstp from "../../src/app/components/nstp-review";
 import { useRouter } from "next/router";
 const comprog = () => {
   const router = useRouter();
@@ -23,7 +24,15 @@ const comprog = () => {
           FlashCards
         </a>
       </div>
-      {subjectid === "Computer Programming" ? <Comprog /> : <IntroCom />}
+      {subjectid === "Computer Programming" ? (
+        <Comprog />
+      ) : subjectid === "Introduction to Computing" ? (
+        <IntroCom />
+      ) : subjectid === "Nstp" ? (
+        <Nstp />
+      ) : (
+        "No Subject Information"
+      )}
     </div>
   );
 };
