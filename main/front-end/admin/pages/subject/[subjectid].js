@@ -1,10 +1,16 @@
-import Navbar from "../src/app/components/navbar";
-import Comprog from "../src/app/components/comprog-review";
+import Navbar from "../../src/app/components/navbar";
+import Comprog from "../../src/app/components/comprog-review";
+import IntroCom from "../../src/app/components/introCom-review";
+import { useRouter } from "next/router";
 const comprog = () => {
+  const router = useRouter();
+  const subjectid = router.query.subjectid;
+
+  console.log(subjectid);
   return (
     <div>
       <Navbar />
-      <h1 className=" ps-2 pt-2 font-[600]">Computer Programming</h1>
+      <h1 className=" ps-2 pt-2 font-[600]">{subjectid}</h1>
       <div className="grid grid-cols-2 mx-auto text-center mt-4 py-2 bg-[#3B82F6]">
         <a
           href="/flashcards"
@@ -17,7 +23,7 @@ const comprog = () => {
           FlashCards
         </a>
       </div>
-      <Comprog />
+      {subjectid === "Computer Programming" ? <Comprog /> : <IntroCom />}
     </div>
   );
 };

@@ -1,9 +1,12 @@
 const Subject = ({ searchTerm }) => {
   const subjects = [
     { id: "math2", name: "Math In Modern world" },
-    { id: "nstp", name: "Nstp" },
-    { id: "comprog", name: "Computer Programming" },
-    { id: "computing", name: "Introduction to Computing" },
+    { id: "subject/Nstp", name: "Nstp" },
+    { id: "subject/Computer Programming", name: "Computer Programming" },
+    {
+      id: "subject/Introduction to Computing",
+      name: "Introduction to Computing",
+    },
   ];
 
   const filteredSubjects = subjects.filter((subject) =>
@@ -19,7 +22,7 @@ const Subject = ({ searchTerm }) => {
           className="flex flex-col items-center"
         >
           <img
-            src={`/${subject.id}.png`}
+            src={`/${subject.name}.png`}
             className="rounded-md mt-7"
             alt={subject.name}
           />
